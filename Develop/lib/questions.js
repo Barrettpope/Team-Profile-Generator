@@ -2,7 +2,7 @@ module.exports = {
     manager: [{
             name: "name",
             type: "input",
-            message: "What is the manager's name (please enter first and last)?",
+            message: "What is the manager's name? (please enter first and last):",
         },
         {
             name: "id",
@@ -24,7 +24,7 @@ module.exports = {
     engineer: [{
             name: "name",
             type: "input",
-            message: "What is the engineer's name (please enter first and last)?",
+            message: "What is the engineer's name? (please enter first and last):",
         },
         {
             name: "id",
@@ -46,7 +46,7 @@ module.exports = {
     intern: [{
             name: "name",
             type: "input",
-            message: "What is the intern's name (please enter first and last)?",
+            message: "What is the intern's name? (please enter first and last):",
         },
         {
             name: "id",
