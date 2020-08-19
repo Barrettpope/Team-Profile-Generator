@@ -7,9 +7,62 @@ const fs = require("fs");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-
+const questions = require("./lib/questions");
 const render = require("./lib/htmlRenderer");
+let employeeList = [];
 
+buildManager()
+
+function getChoice() {
+    inquirer.prompt(questions.select)
+        .then(function (answer) {
+            switch (answer.choice) {
+                case 'Yes, add Engineer':
+                    return buildEngineer();
+                    break;
+                case 'Yes, add Intern':
+                    return buildIntern();
+                    break;
+                case 'No thanks!':
+                    return renderHTML();
+                    break;
+                default:
+                    break;
+            };
+        });
+};
+
+function buildManager() {
+    inquirer.prompt(questions.manager)
+        .then(function (answer) {
+            const employee = new Manager(answer.name, answer.id, answer.email, answer.officeNumber);
+            employeeList.push(employee);
+            getChoice();
+        });
+};
+
+function buildEngineer() {
+    inquierer.prompt(questions.engineer)
+        .then(function (answer) {
+            const employee = new Engineer(answer.name, answer.id, answer.email, answer.github);
+            employeeList.push(employee);
+            getChoice();
+        });
+};
+
+function buildIntern() {
+    inquirer.prompt(questions.intern)
+        .then(function (answer) {
+            const employee = new Intern(answer.name, answer.id, answer.email, answer.school);
+            employeeList.push(employee);
+            getChoice();
+        })
+};
+
+function renderHTML() {
+    const html = render(employeeList)
+    fs.writeFileSync(outputPath, html);
+};
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
