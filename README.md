@@ -5,7 +5,7 @@
 * [Installation](#installation)
 * [Contributing](#contributing)
 * [Visuals](#visuals)
-* [Link](#linktoapplicationdemo)
+* [Demonstration](#demonstration)
 * [Support](#support)
 
 ## Description
@@ -21,7 +21,7 @@ To install, run "npm install" in your Command Line System.
 ## Visuals
 ![](Assets/app.png)
 
-## Link to Application Demo
+## Demonstration
 https://drive.google.com/file/d/1PnFMaZqRjpIH_CuQF-nkAmZiLQNv82pr/view
 
 ## Contributing
